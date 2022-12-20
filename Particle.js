@@ -5,7 +5,10 @@ class Particle {
     this.velocity = createVector(random(-2, 2), random(-2, 0));
     this.position = position.copy();
     this.c = color(random(100,200),random(100,200),random(100,200));
+    this.r1 = random(100);
+    this.r2 = random(100);
     // this.lifespan = 255;
+    
   }
 
   run() {
@@ -24,19 +27,19 @@ class Particle {
   checkEdge() {
 
     if (this.position.y > height) {
-        this.velocity.y *= -1;
+        this.velocity.y *= -0.3;
         this.position.y = height;
     }
     if (this.position.y < 0) {
-          this.velocity.y *= -1;
+          this.velocity.y *= -0.3;
           this.position.y = 0;
     }
     if (this.position.x > width) {
-        this.velocity.x *= -1;
+        this.velocity.x *= -0.3;
         this.position.x = width;
     }
     if (this.position.x < 0) {
-          this.velocity.x *= -1;
+          this.velocity.x *= -0.3;
           this.position.x = 0;
     }
     
@@ -46,7 +49,7 @@ class Particle {
     stroke(this.c);
     strokeWeight(2);
     fill(this.c);
-    ellipse(this.position.x, this.position.y, 12, 12);
+    ellipse(this.position.x, this.position.y, this.r1, this.r2);
   }
 
   isDead() {

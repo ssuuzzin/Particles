@@ -5,7 +5,9 @@ class Confetti extends Particle {
     this.w = 12;
     // this.synth = new p5.MonoSynth();
     this.c = color(random(100,200),random(100,200),random(100,200));
-  }
+    this.r1 = random(100);
+    this.r2 = random(100);
+}
   
   // Override the display method
   display() {
@@ -17,7 +19,7 @@ class Confetti extends Particle {
     translate(this.position.x, this.position.y);
     let theta = map(this.position.x, 0, width, 0, TWO_PI * 20);
     rotate(theta);
-    rect(0, 0, this.w, this.w);
+    rect(0, 0, this.r1, this.r2);
     pop();
   }
 }
