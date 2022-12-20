@@ -1,7 +1,7 @@
 class Particle {
 
   constructor(position) {
-    this.acceleration = createVector(0, 0.15);
+    this.acceleration = createVector(0, 0);
     this.velocity = createVector(random(-2, 2), random(-2, 0));
     this.position = position.copy();
     this.lifespan = 255;
@@ -21,10 +21,24 @@ class Particle {
   }
   
   checkEdge() {
+
     if (this.position.y > height) {
-      this.velocity.y *= -1;
-      this.position.y = height;
+        this.velocity.y *= -1;
+        this.position.y = height;
     }
+    if (this.position.y < 0) {
+          this.velocity.y *= -1;
+          this.position.y = 0;
+    }
+    if (this.position.x > width) {
+        this.velocity.x *= -1;
+        this.position.x = width;
+    }
+    if (this.position.x < 0) {
+          this.velocity.x *= -1;
+          this.position.x = 0;
+    }
+    
   }
 
   display() {
