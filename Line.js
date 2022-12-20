@@ -4,8 +4,8 @@ class Line extends Particle {
         super(position);
         this.w = 12;
         this.c = color(random(255),random(255),random(255),random(150,255));
-        this.r1 = random(20);
-        this.r2 = random(80); 
+        this.r1 = random(50);
+        this.r2 = random(200); 
     }
   
     display() {

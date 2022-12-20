@@ -21,6 +21,6 @@ class ParticleSystem {
     }
 
     // Filter removes any elements of the array that do not pass the test
-    this.particles = this.particles.filter(particle => !particle.isDead());
+    // this.particles = this.particles.filter(particle => !particle.isDead());
   }
 }

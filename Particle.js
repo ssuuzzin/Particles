@@ -5,8 +5,8 @@ class Particle {
     this.velocity = createVector(random(-2, 2), random(-2, 0));
     this.position = position.copy();
     this.c = color(random(100,255),random(100,255),random(100,255),random(150,255));
-    this.r1 = random(100);
-    this.r2 = random(100);
+    this.r1 = random(200);
+    this.r2 = random(200);
     // this.lifespan = 255;
     
   }
@@ -52,11 +52,11 @@ class Particle {
     ellipse(this.position.x, this.position.y, this.r1, this.r2);
   }
 
-  isDead() {
-    if (this.lifespan < 0.0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+//   isDead() {
+//     if (this.lifespan < 0.0) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
 }
