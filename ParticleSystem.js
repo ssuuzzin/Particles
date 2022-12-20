@@ -19,8 +19,5 @@ class ParticleSystem {
     for (let particle of this.particles) {
       particle.run();
     }
-
-    // Filter removes any elements of the array that do not pass the test
-    // this.particles = this.particles.filter(particle => !particle.isDead());
   }
 }
