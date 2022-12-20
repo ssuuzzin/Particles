@@ -1,5 +1,3 @@
-// 참고가 되는 책 내용은 아래와 같습니다.
-// https://natureofcode.com/book/chapter-4-particle-systems/
 
 let particleSystem;
 
