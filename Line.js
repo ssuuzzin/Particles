@@ -3,10 +3,11 @@ class Line extends Particle {
   constructor(position) {
     super(position);
     this.w = 12;
+    this.c = color(random(100,200),random(100,200),random(100,200));
   }
   
   display() {
-    stroke(255, this.lifespan);
+    stroke(this.c);
     strokeWeight(2);
     push();
     translate(this.position.x, this.position.y);

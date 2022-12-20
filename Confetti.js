@@ -3,7 +3,7 @@ class Confetti extends Particle {
   constructor(position) {
     super(position);
     this.w = 12;
-    this.synth = new p5.MonoSynth();
+    // this.synth = new p5.MonoSynth();
     this.c = color(255);
 
   }
@@ -11,9 +11,9 @@ class Confetti extends Particle {
   // Override the display method
   display() {
     rectMode(CENTER);
-    fill(this.c, this.lifespan);
-    stroke(255, this.lifespan);
-    strokeWeight(2);
+    fill(this.c);
+    stroke(this.c);
+    strokeWeight(1);
     push();
     translate(this.position.x, this.position.y);
     let theta = map(this.position.x, 0, width, 0, TWO_PI * 20);
