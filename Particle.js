@@ -1,42 +1,44 @@
 class Particle {
-    constructor(position) {
-        this.acc = createVector(0,0.15);
-        this.vel = createVector(random(-2,0),random(-2,-0));
-        this.position = position.copy();
-        this.lifespan = 255;
-    }
+
+  constructor(position) {
+    this.acceleration = createVector(0, 0.15);
+    this.velocity = createVector(random(-2, 2), random(-2, 0));
+    this.position = position.copy();
+    this.lifespan = 255;
+  }
+
+  run() {
+    this.update();
+    this.display();
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.lifespan -= 2;
     
-    run() {
-        this.update();
-        this.display();
+    this.checkEdge();
+  }
+  
+  checkEdge() {
+    if (this.position.y > height) {
+      this.velocity.y *= -1;
+      this.position.y = height;
     }
+  }
 
-    update() {
-        this.vel.add(this.acc);
-        this.position.add(this.vel);
-        this.lifespan -= 2;
-        this.checkEdge();
+  display() {
+    stroke(255, this.lifespan);
+    strokeWeight(2);
+    fill(255, this.lifespan);
+    ellipse(this.position.x, this.position.y, 12, 12);
+  }
+
+  isDead() {
+    if (this.lifespan < 0.0) {
+      return true;
+    } else {
+      return false;
     }
-
-    checkEdge() {
-        if (this.position.y > height) {
-            this.vel.y *= -1;
-            this.position.y = height;
-        }
-    }
-
-    display() { 
-        stroke(255,this.lifespan);
-        strokeWeight(2);
-        fill(255,this.lifespan);
-        ellipse(this.position.x,this.position.y,12,12)
-    }
-
-    // isDead() {
-        //   if (this.lifespan < 0.0) {
-        //     return true;
-        //   } else {
-        //     return false;
-        //   }
-        // }
+  }
 }
