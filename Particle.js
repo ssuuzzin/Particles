@@ -4,7 +4,7 @@ class Particle {
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(random(-2, 2), random(-2, 0));
     this.position = position.copy();
-    this.c = color(random(100,200),random(100,200),random(100,200));
+    this.c = color(random(100,200),random(100,200),random(100,200),random(150,255));
     this.r1 = random(100);
     this.r2 = random(100);
     // this.lifespan = 255;

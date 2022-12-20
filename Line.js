@@ -3,7 +3,7 @@ class Line extends Particle {
     constructor(position) {
         super(position);
         this.w = 12;
-        this.c = color(random(100,200),random(100,200),random(100,200));
+        this.c = color(random(100,200),random(100,200),random(100,200),random(150,255));
         this.r1 = random(20);
         this.r2 = random(80); 
     }
