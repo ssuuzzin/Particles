@@ -4,8 +4,7 @@ class Confetti extends Particle {
     super(position);
     this.w = 12;
     // this.synth = new p5.MonoSynth();
-    this.c = color(255);
-
+    this.c = color(random(100,200),random(100,200),random(100,200));
   }
   
   // Override the display method
