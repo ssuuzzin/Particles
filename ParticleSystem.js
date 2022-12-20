@@ -6,7 +6,7 @@ class ParticleSystem {
   }
 
   addParticle() {
-    let r = random(1);
+    let r = random(5);
     if (r < 0.5) {
       this.particles.push(new Particle(this.origin));
     } else {
